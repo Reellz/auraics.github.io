@@ -146,6 +146,25 @@ img {
 
 
 /* About page styles */
+/* Section Styling */
+.section {
+    padding: 20px; /* Adjusted for fixed navbar */
+    max-width: 800px;
+    margin: auto;
+    background-color: rgba(146, 110, 65, 0.18); /* Light white background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center; /* Align section titles to center */
+    text-decoration: underline; /* Underlined section titles */
+    font-size: 1.8em;
+    color: #000000; /* Accent color for headings */
+    margin: 0.5em 0;
+}
+
 .about-section {
     padding-top: 100px;
     background: #ff9a0317;
@@ -166,9 +185,12 @@ img {
 .values ul, .objectives ul, .services ul {
     list-style-position: inside;
     margin: 1rem 0;
-} .values ul li, .objectives ul li, .services ul li {
+    text-align: j;
+} 
+.values ul li, .objectives ul li, .services ul li {
     margin: 0.5rem 0;
     padding-left: 1rem;
+    text-align: center;
 }
 
 .problem-statement, .solution {
