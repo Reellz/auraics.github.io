@@ -146,6 +146,15 @@ img {
 
 
 /* About page styles */
+.about-section {
+    padding-top: 100px;
+    background: #ff9a0317;
+}
+
+.about {
+    text-decoration: underline;
+}
+
 /* Section Styling */
 .section {
     padding: 20px; /* Adjusted for fixed navbar */
@@ -163,15 +172,6 @@ img {
     font-size: 1.8em;
     color: #000000; /* Accent color for headings */
     margin: 0.5em 0;
-}
-
-.about-section {
-    padding-top: 100px;
-    background: #ff9a0317;
-}
-
-.about {
-    text-decoration: underline;
 }
 
 .vision-mission {
