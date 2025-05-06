@@ -1,5 +1,5 @@
 # Aura-International-Christian-School (A.I.C.S.)
-# Video url: 
+# Video url: https://www.youtube.com/watch?v=HnNt6ELj_oo
 # Description:
 This repository contains the web pages and associated functionality for Aura International Christian School (AICS), a Christ-centered educational institution committed to providing high-quality, individualized learning experiences. The website includes multiple sections designed to introduce the school, its mission, vision, and services, as well as to facilitate contact and registration. Visitors can learn about the school’s values, and access essential contact information. The website is designed with flexibility and accessibility in mind, allowing AICS to engage effectively with its community and provide a user-friendly experience for prospective students and their families.
 
