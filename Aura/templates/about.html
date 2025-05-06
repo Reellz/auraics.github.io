@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}Aura International Christian School - About Us{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+
+{% endblock %}
+
+{% block content %}
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h1 id="head" class="about">About AICS</h1>
+            <div class="vision-mission">
+                <div class="vision">
+                    <h2 id="head">Vision</h2>
+                    <p>A community of fulfilled, Godly-Global citizens serving others excellently.</p>
+                </div>
+                <div class="mission">
+                    <h2 id="head">Mission</h2>
+                    <p>Equipping the next-generation for godly, resourceful, and purposeful living.</p>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="values">
+                    <h2 class="section-title">Our Values</h2>
+                    <ul>
+                        <li>Humility</li>
+                        <li>Integrity</li>
+                        <li>Diligence</li>
+                        <li>Godliness</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="problem-statement">
+                <h2>Problem Statement</h2>
+                <p>In today's globalized society, many families struggle to find an educational
+                institution that aligns with their values while providing rigorous academic
+                programs. Public and conventional private schools often fail to incorporate 
+                spiritual growth and moral education, resulting in students who may excel academically
+                but lack a strong ethical foundation.
+                </p>
+            </div>
+            <div class="solution">
+                <h2>Solution</h2>
+                <p>Aura International Christian School offers a curriculum that integrates 
+                academic rigor with spiritual and moral education. By employing qualified educators 
+                who are committed to both academic excellence and Christian values, we are able to create 
+                a nurturing environment where students can thrive intellectually and spiritually. Our 
+                innovative programs and diverse extracurricular activities, conducted in a homely environment, 
+                further enhance the educational experience, ensuring that our students are well-rounded individuals.</p>
+            </div>
+
+            <div class="objectives">
+                <h2 id="head">Objectives</h2>
+                <ul>
+                    <li>Helping working parents with baby care.</li>
+                    <li>Empower parents to reinforce godly values.</li>
+                    <li>Develop innovative solutions through research.</li>
+                    <li>Cultivate godliness through discipleship and mentorship.</li>
+                    <li>Provide quality education through Early Childhood Development and the ACE Curriculum (4-18+ years).</li>
+                </ul>
+            </div>
+
+            <div class="services">
+                <h2 id="head">Services</h2>
+                <ul>
+                    <li>Home Schoolers support.</li>
+                    <li>Community outreach programs.</li>
+                    <li>ACE program (Pre-school, primary, secondary, A-levels).</li>
+                    <li>Early Childhood Development (ECD) and day care services.</li>
+                </ul>
+            </div>
+
+            <div class="ace-info">
+                <h2 id="head">About ACE Curriculum</h2>
+                <p>AICS uses the Accelerated Christian Education(ACE) curriculum. At AICS, we provide a Christ-centered
+                education using ACE which is an individualized, self-paced, and bible-based programme.</p>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 +256-751-420-955</p>
+                <p>📧 <a href="mailto: infoaics25@gmail.com">infoaics25@gmail.com</a></p>
+                <p>📍 Najjera, Kira Town Council</p>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><img src="images/fb-icon.png" alt=""></a>
+                    <a href="#"><img src="images/twitter-icon.png" alt=""></a>
+                    <a href="https://www.instagram.com/aicsint/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 | Aura International Christian School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+{% endblock %}
