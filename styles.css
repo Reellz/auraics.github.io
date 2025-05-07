@@ -197,6 +197,10 @@ img {
     text-align: center;
 }
 
+.about-ace {
+    text-align: center;
+}
+
 /* Contact page styles */
 .contact {
     padding-top: 100px;
@@ -215,6 +219,10 @@ img {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#social-media-heading {
+    text-align: center;
 }
 
 .form-group {
