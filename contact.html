@@ -42,11 +42,7 @@
 
                 <section class="contact-form">
                     <h2>Send Us a Message</h2>
-                    <form action="https://formspree.io/f/xkgrbrgv" method="POST">
-                      
-                      <!-- Optional: Customize redirect -->
-                      <input type="hidden" name="_redirect" value="https://auraics.vercel.app/thank-you.html">
-                  
+                    <form action="https://formspree.io/f/xkgrbrgv" method="POST">      
                       <div class="form-group">
                         <label for="name">Your Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -75,7 +71,9 @@
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                       </div>
-                  
+
+                      <!-- Optional: Customize redirect -->
+                      <input type="hidden" name="_redirect" value="https://auraics.vercel.app/thank-you.html">
                       <button type="submit" class="submit-btn">Submit Message</button>
                     </form>
                   </section>                  
