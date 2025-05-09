@@ -43,8 +43,10 @@
                 <section class="contact-form">
                     <h2>Send Us a Message</h2>
                     <form action="https://getform.io/f/bejrgdya" method="POST">
-                        <!-- Optional: Redirect to a thank-you page -->
+                         <!-- Optional: Redirect to a thank-you page -->
                       <input type="hidden" name="_redirect" value="https://auraics.vercel.app/thank-you.html">
+                      <!-- add hidden Honeypot input to prevent spams -->
+                      <input type="hidden" name="_gotcha" style="display:none !important">
                       
                       <div class="form-group">
                         <label for="name">Your Name:</label>
