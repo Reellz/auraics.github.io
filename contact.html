@@ -42,8 +42,8 @@
 
                 <section class="contact-form">
                     <h2>Send Us a Message</h2>
-                    <form action="https://formsubmit.co/atwanbwambs@gmail.com" method="POST">
-                    <input type="hidden" name="_next" value="https://reellz.github.io/auraics.github.io/thank-you.html">                      <div class="form-group">
+                    <form id="form" action="">
+                    <div class="form-group">
                         <label for="name">Your Name:</label>
                         <input type="text" id="name" name="name" required>
                       </div>
@@ -139,5 +139,39 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        var form = document.getElementById("form")
+        form.addEventListener("submit", formSubmit)
+        function formSubmit(e) {
+            e.preventDefault()
+
+            const formData = new FormData();
+            formData.append(
+                'name',
+                document.querySelector('input[name="name"]').value
+            )
+            formData.append(
+                'email',
+                document.querySelector('input[name="email"]').value
+            )
+            formData.append(
+                'subject',
+                document.querySelector('input[name="subject"]').value
+            )
+            formData.append(
+                'message',
+                document.querySelector('input[name="message"]').value
+            )
+             fetch("https://getform.io/f/aolmxoob",
+                {
+                    method:"POST",
+                    body: formData,
+                })
+                .then(response => console.log(response))
+                .catch(error => console.log(error))
+            alert("Your message has been sent successfully!")
+            form.reset()
+        }
+    </script>
 </body>
 </html>
