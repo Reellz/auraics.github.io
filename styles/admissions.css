@@ -1,0 +1,407 @@
+/* Admissions Page Specific Styles */
+.admissions-main {
+    padding-top: 80px;
+}
+
+.admissions-hero {
+    background: linear-gradient(rgba(42, 127, 98, 0.85), rgba(42, 127, 98, 0.9)), 
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+    color: var(--white);
+    padding: 120px 0;
+    text-align: center;
+}
+
+.admissions-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.admissions-hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Why Choose Section */
+.why-choose-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background-color: var(--off-white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--light-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.benefit-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+}
+
+.benefit-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Process Section */
+.process-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.process-steps {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--gold);
+    z-index: 1;
+}
+
+.process-item {
+    position: relative;
+    padding: 20px 0 20px 80px;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.step-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.step-content h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Requirements Section */
+.requirements-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.requirements-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.requirements-list {
+    flex: 1;
+}
+
+.requirements-list h3 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.requirements-list ul {
+    list-style-type: none;
+}
+
+.requirements-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.requirements-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--gold);
+    border-radius: 3px;
+}
+
+.requirements-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.requirements-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.requirements-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Tuition Section */
+.tuition-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.tuition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tuition-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid var(--gold);
+    transition: transform 0.3s;
+}
+
+.tuition-card:hover {
+    transform: translateY(-10px);
+}
+
+.tuition-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.tuition-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.tuition-amount span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-gray);
+}
+
+.tuition-card ul {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.tuition-card li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.tuition-card li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+.financial-aid {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.financial-aid h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.financial-aid p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+/* Apply Section */
+.apply-section {
+    padding: 80px 0;
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+.apply-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.apply-text {
+    flex: 1;
+}
+
+.apply-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.apply-text p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.apply-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.apply-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.apply-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.apply-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .requirements-content,
+    .apply-content {
+        flex-direction: column;
+    }
+    
+    .requirements-image,
+    .apply-image {
+        order: -1;
+    }
+    
+    .admissions-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-steps::before {
+        left: 30px;
+    }
+    
+    .process-item {
+        padding-left: 70px;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .admissions-hero {
+        padding: 80px 0;
+    }
+    
+    .admissions-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .admissions-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .apply-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .admissions-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .process-steps::before {
+        left: 25px;
+    }
+    
+    .process-item {
+        padding-left: 60px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+    }
+}
