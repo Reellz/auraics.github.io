@@ -1,166 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../images/logo.png" type="logo-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Aura International Christian School</title>
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/contact.css">
-
-    <!-- Tailwind and DaisyUI (Fixed) -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Google Fonts -->
+    <title>Contact Us - Aura International Christian School</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poetsen+One&family=Satisfy&display=swap"
-        rel="stylesheet">
-    <!-- Font-Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="../index.html" class="navbar-logo">
-            <img src="../index.html" alt="AICS logo">
-            Aura International Christian School
-        </a>
-
-        <ul class="nav-links">
-            <li><a href="/auraics.github.io/index.html" class="active">Home</a></li>
-            <li><a href="/auraics.github.io/pages/events.html">Events</a></li>
-            <li><a href="/auraics.github.io/pages/about.html">About Us</a></li>
-            <li><a href="/auraics.github.io/pages/contact.html">Contact</a></li>
-            <li><a href="/auraics.github.io/pages/about.html" class="cta-button">Get Started</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p class="stm-nt">We're here to help! Reach out using the information below or the form provided.</p>
-
-            <div class="contact-grid">
-                <section class="contact-info">
-                    <h2>Contact Information</h2>
-                    <p><strong>Aura International Christian School</strong></p>
-                    <p>Najjera, Kira Town Council</p>
-                    <p>📞 <strong>Phone:</strong> <a href="tel:+256782120207">+256-782-120207</a></p>
-                    <p>📧 <strong>Email:</strong> <a href="mailto:infoaics25@gmail.com">infoaics25@gmail.com</a></p>
-                </section>
-
-                <section class="contact-form">
-                    <h2>Send Us a Message</h2>
-                    <form method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number (Optional):</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject:</label>
-                            <select id="subject" name="subject">
-                                <option value="general">General Inquiry</option>
-                                <option value="admissions">Admissions</option>
-                                <option value="support">Support</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Submit Message</button>
-                    </form>
-                </section>
-
-            </div>
-
-            <section class="office-hours">
-                <h2>Office Hours</h2>
-                <p>📅 Monday – Friday: 8:00 AM – 4:00 PM</p>
-            </section>
-
-            <h2 class="lead">Find Us</h2>
-            <div class="map-responsive">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18743.40432187379!2d32.61184011618005!3d0.3879473937579783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db1005e6c46c5%3A0x9726f02f65d4e8b9!2sAura%20International%20C.S!5e1!3m2!1sen!2sug!4v1743782671650!5m2!1sen!2sug"
-                    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-
-            <section class="social-media">
-                <h2 id="social-media-heading">Follow Us on Social Media</h2>
-                <div class="social-links-large">
-                    <a href="https://www.facebook.com/profile.php?id=61575927843812" class="social-link"><i
-                            class="fab fa-facebook"></i> Facebook</a>
-                    <!--<a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>-->
-                    <a href="https://www.instagram.com/aicsint/" class="social-link"><i class="fab fa-instagram"></i>
-                        Instagram</a>
-                    <a href="https://www.linkedin.com/company/aura-international-christian-school/"
-                        class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="School Logo" class="logo">
+                <div class="school-name">
+                    <h1>Aura International Christian School</h1>
+                    <p>Excellence in Education, Rooted in Faith</p>
                 </div>
-            </section>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </section>
+    </header>
+
+    <!-- Contact Main Content -->
+    <main class="contact-main">
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1>Get In Touch</h1>
+                <p>We'd love to hear from you! Reach out with questions or to schedule a visit.</p>
+            </div>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="section-container">
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Location</h3>
+                        <p>Najjera, Kira Town Council<br>Kampala, Uganda</p>
+                        <a href="#map-section" class="info-link">View on map <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+256782120207">+256-782-120207</a></p>
+                        <p>Monday - Friday, 8:00 AM - 4:00 PM</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:infoaics25@gmail.com">infoaics25@gmail.com</a></p>
+                        <p>We typically respond within 24 hours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="section-container">
+                <div class="form-container">
+                    <div class="form-content">
+                        <h2 class="section-title">Send Us a Message</h2>
+                        <p>Have questions about admissions, programs, or anything else? Fill out the form below and we'll get back to you soon.</p>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name*</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <div class="error-message" id="nameError"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address*</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <div class="error-message" id="emailError"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject*</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="admissions">Admissions Inquiry</option>
+                                    <option value="general">General Information</option>
+                                    <option value="visitation">Schedule a Visit</option>
+                                    <option value="employment">Employment Opportunities</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="error-message" id="subjectError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message*</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <div class="error-message" id="messageError"></div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <span class="submit-text">Send Message</span>
+                                <span class="loading-spinner"></span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="form-image">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Students at AICS">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="map-section" class="map-section">
+            <div class="section-container">
+                <h2 class="section-title">Find Our Campus</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753404041895!2d32.61184031575396!3d0.3879473641598897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db1005e6c46c5%3A0x9726f02f65d4e8b9!2sAura%20International%20C.S!5e0!3m2!1sen!2sug!4v1620000000000!5m2!1sen!2sug" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="map-actions">
+                    <a href="https://maps.google.com?q=Aura+International+Christian+School+Najjera" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-section">
+            <div class="section-container">
+                <h2 class="section-title">Connect With Us</h2>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61575927843812" target="_blank" class="social-link">
+                        <div class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/aicsint/" target="_blank" class="social-link">
+                        <div class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/aura-international-christian-school/" target="_blank" class="social-link">
+                        <div class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>📞 <a href="tel:+256782120207">+256-782-120207</a></p>
-                <p>📧 <a href="mailto:infoaics25@gmail.com">infoaics25@gmail.com</a></p>
-                <p>📍 Najjera, Kira Town Council</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="/auraics.github.io/index.html">Home</a></li>
-                    <li><a href="/auraics.github.io/pages/about.html">About Us</a></li>
-                    <li><a href="/auraics.github.io/pages/events.html">Events</a></li>
-                    <li><a href="/auraics.github.io/pages/contact.html">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Academics</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">School Calendar</a></li>
+                    <li><a href="#">Parent Portal</a></li>
+                    <li><a href="#">Lunch Menu</a></li>
+                    <li><a href="#">Uniform Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61575927843812" target="_blank"><i
-                            class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/aura-international-christian-school/" target="_blank"><i
-                            class="fa-brands fa-linkedin"></i></i></a>
-                    <a href="https://www.instagram.com/aicsint/" target="_blank"><i
-                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61575927843812"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/aura-international-christian-school/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/aicsint/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
+                <p>Subscribe to our newsletter</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>Copyright &copy; 2025 | Aura International Christian School. All rights reserved.</p>
+            <p>&copy; 2023 Aura International Christian School. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="/auraics.github.io/script.js"></script>
+    <script src="../contact.js"></script>
 </body>
-
 </html>
