@@ -1,0 +1,362 @@
+/* Events Page Styles */
+.events-hero {
+    background: linear-gradient(rgba(42, 127, 98, 0.85), rgba(42, 127, 98, 0.9)), 
+                url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.events-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.events-hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Academic Calendar Section */
+.academic-calendar-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.term-card {
+    background-color: var(--off-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.term-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.term-header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.term-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.term-dates {
+    margin-top: 10px;
+}
+
+.date-badge {
+    background-color: var(--gold);
+    color: var(--dark-gray);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.term-details {
+    padding: 25px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.detail-item i {
+    color: var(--primary-green);
+    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.term-events {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--medium-gray);
+}
+
+.term-events h4 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.term-events ul {
+    list-style-type: none;
+}
+
+.term-events li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.term-events li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--gold);
+    border-radius: 50%;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.newsletter-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.newsletter-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.newsletter-item:hover {
+    transform: scale(1.02);
+}
+
+.newsletter-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.newsletter-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.newsletter-item:hover .newsletter-overlay {
+    opacity: 1;
+}
+
+.view-btn {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--dark-gray);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.view-btn:hover {
+    background-color: var(--white);
+}
+
+.view-btn i {
+    margin-right: 5px;
+}
+
+/* Upcoming Events Section */
+.upcoming-events-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.events-timeline {
+    margin-top: 40px;
+    position: relative;
+    padding-left: 50px;
+}
+
+.events-timeline::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--medium-gray);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.timeline-date {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.date-day {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-content {
+    padding-left: 30px;
+}
+
+.timeline-content h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.event-meta i {
+    margin-right: 5px;
+    color: var(--gold);
+}
+
+.events-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.events-cta p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .events-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-timeline {
+        padding-left: 40px;
+    }
+    
+    .timeline-date {
+        left: -40px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .date-day {
+        font-size: 1rem;
+    }
+    
+    .date-month {
+        font-size: 0.6rem;
+    }
+    
+    .events-hero {
+        padding: 80px 0;
+    }
+    
+    .events-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .events-hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .events-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .events-timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-date {
+        left: -30px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .date-day {
+        font-size: 0.8rem;
+    }
+    
+    .date-month {
+        font-size: 0.5rem;
+    }
+    
+    .timeline-content {
+        padding-left: 20px;
+    }
+}

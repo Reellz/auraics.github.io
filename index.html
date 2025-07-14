@@ -1,101 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/auraics.github.io/images/logo.png" type="logo-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/logo.png" type="logo-icon">
     <title>Aura International Christian School</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Import custom cursive font -->
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html"><div class="logo">AICS</div></a>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html" class="cta-button">Get Started</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Aura International Christian School!</h1>
-            <h2>Growing to glow</h2>
-            <p>
-                Aura International Christian School is positioned to become a leading educational institution that 
-                blends innovative and academic excellence with Christian values. Located in a diverse and multicultural 
-                environment, the school aims to provide an exceptional learning experience for students of various backgrounds 
-                while nurturing their faith. With a commitment to holistic education, we strive to empower students to reach 
-                their full potential spiritually, academically, and socially.
-            </p><br>
-            <a href="about.html" class="cta-button">Learn More</a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <i class="fas fa-cross"></i>
-            <h3>Christian Values</h3>
-            <p>Building strong spiritual foundations</p>
-        </div><br>
-        <div class="feature-card">
-            <i class="fas fa-graduation-cap"></i>
-            <h3>Academic Excellence</h3>
-            <p>Rigorous curriculum for success</p>
-        </div><br>
-        <div class="feature-card">
-            <i class="fas fa-users"></i>
-            <h3>Community</h3>
-            <p>Nurturing supportive environment</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>📞 <a href="tel:+256782120207">+256-782-120207</a></p>
-                <p>📧 <a href="mailto:infoaics25@gmail.com">infoaics25@gmail.com</a></p>
-                <p>📍 Najjera, Kira Town Council</p>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/images/logo.png" alt="School Logo" class="logo">
+                <div class="school-name">
+                    <h1>Aura International Christian School</h1>
+                    <p>Excellence in Education, Rooted in Faith</p>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                    <li><a href="/pages/events.html">Academics</a></li>
+                    <li><a href="/pages/admissions.html">Admissions</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2>Shaping Future Leaders with Christian Values</h2>
+                <p>Providing quality education that nurtures the mind, body, and spirit</p>
+                <div class="hero-buttons">
+                    <a href="./pages/admissions.html" class="btn btn-primary">Apply Now</a>
+                    <a href="./pages/about.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <h2 class="section-title">About Our School</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Aura International Christian School is a premier educational institution committed to
+                            academic excellence and spiritual growth. Founded on Christian principles, we provide a
+                            nurturing environment where students can thrive intellectually, socially, and spiritually.
+                        </p>
+                        <p>Our dedicated faculty and staff are committed to helping each student reach their full
+                            potential while developing strong moral character and a lifelong love for learning.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/400x300" alt="School Building">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="academics" class="academics-section">
+            <div class="section-container">
+                <h2 class="section-title">Our Academic Programs</h2>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Early Childhood</h3>
+                        <p>Our preschool program nurtures young minds through play-based learning and foundational
+                            Christian values.</p>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Elementary School</h3>
+                        <p>A comprehensive curriculum that builds strong academic foundations and character development.
+                        </p>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>High School</h3>
+                        <p>College-preparatory program with advanced courses and spiritual guidance for young adults.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="section-container">
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Faith</h3>
+                        <p>We integrate Christian principles into all aspects of learning and school life.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Excellence</h3>
+                        <p>We strive for academic rigor and personal growth in all our programs.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Integrity</h3>
+                        <p>We cultivate honesty, responsibility, and strong moral character.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Community</h3>
+                        <p>We foster a supportive environment where everyone belongs and thrives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admissions" class="admissions-section">
+            <div class="section-container">
+                <h2 class="section-title">Admissions Process</h2>
+                <div class="admissions-content">
+                    <div class="admissions-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Inquiry</h3>
+                                <p>Contact our admissions office or attend an open house event.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Application</h3>
+                                <p>Complete the online application form and submit required documents.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Assessment</h3>
+                                <p>Student assessment and family interview with school administration.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Enrollment</h3>
+                                <p>Receive acceptance notification and complete enrollment process.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admissions-form">
+                        <h3>Request Information</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Parent Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <select required>
+                                    <option value="">Interest Level</option>
+                                    <option>Preschool</option>
+                                    <option>Elementary</option>
+                                    <option>High School</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Education Avenue, Knowledge City</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>(123) 456-7890</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@aurainternational.edu</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Monday-Friday: 8:00 AM - 4:30 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7268597737107!2d32.61954347599009!3d0.38795276391029987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db1005e6c46c5%3A0x9726f02f65d4e8b9!2sAura%20International%20C.S!5e0!3m2!1sen!2sug!4v1752495357399!5m2!1sen!2sug"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                    <li><a href="/pages/events.html">Academics</a></li>
+                    <li><a href="/pages/admissions.html">Admissions</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">School Calendar</a></li>
+                    <li><a href="#">Parent Portal</a></li>
+                    <li><a href="#">Lunch Menu</a></li>
+                    <li><a href="#">Uniform Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61575927843812"><i class="fa-brands fa-facebook-f" target="_blank"></i></a>
-                    <a href="https://www.linkedin.com/company/aura-international-christian-school/" target="_blank"><i class="fa-brands fa-linkedin"></i></i></a>
-                    <a href="https://www.instagram.com/aicsint/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
+                <p>Subscribe to our newsletter</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>Copyright &copy; 2025 | Aura International Christian School. All rights reserved.</p>
+            <p>&copy; 2023 Aura International Christian School. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/auraics.github.io/script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,316 @@
+/* About Page Specific Styles */
+.about-hero {
+    background: linear-gradient(rgba(42, 127, 98, 0.85), rgba(42, 127, 98, 0.9)), 
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.about-hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Mission/Vision Section */
+.mission-vision-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.mission-card, .vision-card {
+    background-color: var(--off-white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.mission-card {
+    border-top: 4px solid var(--gold);
+}
+
+.vision-card {
+    border-top: 4px solid var(--primary-green);
+}
+
+.icon-container {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.mission-card h2, .vision-card h2 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-card i {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+/* Problem/Solution Section */
+.problem-solution-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.problem-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.problem-card, .solution-card {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.problem-card {
+    background-color: var(--light-green);
+    border-left: 4px solid #e74c3c;
+}
+
+.solution-card {
+    background-color: var(--light-gold);
+    border-left: 4px solid var(--primary-green);
+}
+
+.problem-card h2, .solution-card h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Objectives Section */
+.objectives-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.objective-card {
+    background-color: var(--white);
+    padding: 25px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.objective-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.objective-card i {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.objective-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Services Section */
+.services-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--off-white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--light-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.service-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+}
+
+.service-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+/* Curriculum Section */
+.curriculum-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.curriculum-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.curriculum-text {
+    flex: 1;
+}
+
+.curriculum-text h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.curriculum-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.curriculum-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.curriculum-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.curriculum-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .curriculum-content {
+        flex-direction: column;
+    }
+    
+    .curriculum-image {
+        order: -1;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-vision-grid,
+    .problem-solution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero {
+        padding: 80px 0;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .about-hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .objectives-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
