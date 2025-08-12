@@ -39,48 +39,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Form submission handler
-    form.addEventListener('submit', function(e) {
+    // Form submission handler with Formspree AJAX
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
-        if (validateStep(currentStep) && document.getElementById('terms').checked) {
-            // Show loading state
-            submitButton.disabled = true;
-            submitButton.querySelector('.submit-text').style.display = 'none';
-            submitButton.querySelector('.loading-spinner').style.display = 'block';
-            
-            // Simulate form submission (replace with actual AJAX call)
-            setTimeout(() => {
-                // Hide form and show success message
+
+        if (!validateStep(currentStep)) return;
+
+        if (!document.getElementById('terms').checked) {
+            showError('termsError', 'You must accept the terms to submit the application');
+            return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.querySelector('.submit-text').style.display = 'none';
+        submitButton.querySelector('.loading-spinner').style.display = 'block';
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('https://formspree.io/f/mgvzdydp', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
                 scrollToTop();
-                
-                // Here you would typically send the form data to the server
-                const formData = new FormData(form);
-                console.log('Form data:', Object.fromEntries(formData));
-                
-                // In a real application, you would use fetch or AJAX to submit the data
-                // fetch('your-server-endpoint', {
-                //     method: 'POST',
-                //     body: formData
-                // })
-                // .then(response => response.json())
-                // .then(data => {
-                //     form.style.display = 'none';
-                //     successMessage.style.display = 'block';
-                // })
-                // .catch(error => {
-                //     console.error('Error:', error);
-                //     alert('There was an error submitting the form. Please try again.');
-                //     submitButton.disabled = false;
-                //     submitButton.querySelector('.submit-text').style.display = 'block';
-                //     submitButton.querySelector('.loading-spinner').style.display = 'none';
-                // });
-            }, 1500);
-        } else if (!document.getElementById('terms').checked) {
-            document.getElementById('termsError').textContent = 'You must accept the terms to submit the application';
-            document.getElementById('termsError').style.display = 'block';
+            } else {
+                const data = await response.json();
+                if (data.errors) {
+                    alert(data.errors.map(err => err.message).join("\n"));
+                } else {
+                    alert("Oops! There was a problem submitting your form.");
+                }
+                submitButton.disabled = false;
+                submitButton.querySelector('.submit-text').style.display = 'block';
+                submitButton.querySelector('.loading-spinner').style.display = 'none';
+            }
+        } catch (error) {
+            alert("Oops! There was a problem submitting your form.");
+            submitButton.disabled = false;
+            submitButton.querySelector('.submit-text').style.display = 'block';
+            submitButton.querySelector('.loading-spinner').style.display = 'none';
+            console.error(error);
         }
     });
     
@@ -333,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="review-item">
                 <strong>Relationship</strong>
-                <span>${document.getElementById('emergencyRelationship').value}</span>
+                <span>${capitalizeFirstLetter(document.getElementById('emergencyRelationship').value)}</span>
             </div>
             <div class="review-item">
                 <strong>Phone</strong>
