@@ -1,0 +1,164 @@
+/* Thank You Page Styles */
+.thank-you-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.thank-you-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.checkmark-circle {
+    font-size: 5rem;
+    color: #2a7f62;
+    margin-bottom: 1.5rem;
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.thank-you-content h1 {
+    font-size: 2.5rem;
+    color: #2a7f62;
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-steps {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.next-steps h2 {
+    color: #2a7f62;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.next-steps ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.next-steps li {
+    margin-bottom: 0.8rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.next-steps li i {
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    color: #f8b400;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #2a7f62;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1f5e48;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #2a7f62;
+    border: 2px solid #2a7f62;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(42, 127, 98, 0.1);
+    transform: translateY(-2px);
+}
+
+.countdown {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.countdown span {
+    font-weight: bold;
+    color: #2a7f62;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .thank-you-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .thank-you-content h1 {
+        font-size: 2rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .thank-you-container {
+        padding: 2rem 1rem;
+    }
+    
+    .thank-you-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .thank-you-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .checkmark-circle {
+        font-size: 4rem;
+    }
+}

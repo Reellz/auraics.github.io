@@ -133,61 +133,46 @@
             <div class="section-container">
                 <h2 class="section-title">Expression of Interest</h2>
                 <div class="admissions-content">
-                    <!-- <div class="admissions-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h3>Inquiry</h3>
-                                <p>Contact our admissions office or attend an open house event.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h3>Application</h3>
-                                <p>Complete a physical/online application form and submit required documents.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h3>Assessment</h3>
-                                <p>Student assessment and family interview with school administration.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>Enrollment</h3>
-                                <p>Receive acceptance notification and complete enrollment process.</p>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="admissions-form">
                         <h3>Request Information</h3>
-                        <form>
+                        <form action="https://api.web3forms.com/submit" method="post">
+                            <input type="hidden" name="access_key" value="56eb5523-71c2-4b5f-ad18-0bd1f35e193a">
+
                             <div class="form-group">
-                                <input type="text" placeholder="Parent Name" required>
+                                <input type="text" name="parent_name" placeholder="Parent Name" required>
                             </div>
+
                             <div class="form-group">
-                                <input type="email" placeholder="Email Address" required>
+                                <input type="email" name="email" placeholder="Email Address" required>
                             </div>
+
                             <div class="form-group">
-                                <input type="tel" placeholder="Phone Number" required>
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
                             </div>
+
                             <div class="form-group">
-                                <select required>
+                                <select name="interest_level" required>
                                     <option value="">Interest Level</option>
-                                    <option>Pre-school</option>
-                                    <option>Elementary</option>
-                                    <option>High School</option>
+                                    <option value="pre-school">Pre-school</option>
+                                    <option value="elementary">Elementary</option>
+                                    <option value="high-school">High School</option>
                                 </select>
                             </div>
+
                             <div class="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required=""></textarea>
+                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                             </div>
+
+                            <!-- Bot check -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <!-- Submit -->
                             <button type="submit" class="btn btn-primary">Submit Request</button>
+
+                            <!-- Redirect after submit -->
+                            <input type="hidden" name="redirect" value="https://auraics.vercel.app/pages/thank-you.html">
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -204,11 +189,11 @@
                         </div>
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
-                        <p><a href="tel:+256782120207">+256-782-120207</a></p>
+                            <p><a href="tel:+256782120207">+256-782-120207</a></p>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:infoaics25@gmail.com">infoaics25@gmail.com</a></p>
+                            <p><a href="mailto:infoaics25@gmail.com">infoaics25@gmail.com</a></p>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-clock"></i>
@@ -269,6 +254,7 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
