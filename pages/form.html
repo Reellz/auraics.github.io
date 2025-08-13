@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -123,7 +124,8 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="button" class="btn btn-next" data-next="2">Next <i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="btn btn-next" data-next="2">Next <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
 
@@ -208,8 +210,10 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="button" class="btn btn-prev" data-prev="1"><i class="fas fa-arrow-left"></i> Previous</button>
-                    <button type="button" class="btn btn-next" data-next="3">Next <i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="btn btn-prev" data-prev="1"><i class="fas fa-arrow-left"></i>
+                        Previous</button>
+                    <button type="button" class="btn btn-next" data-next="3">Next <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
 
@@ -254,17 +258,20 @@
 
                 <div class="form-group">
                     <label for="specialNeeds">Special Educational Needs or Disabilities</label>
-                    <textarea id="specialNeeds" name="specialNeeds" rows="3" placeholder="Please describe any special educational needs or support required"></textarea>
+                    <textarea id="specialNeeds" name="specialNeeds" rows="3"
+                        placeholder="Please describe any special educational needs or support required"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="extracurricular">Extracurricular Interests or Talents</label>
-                    <textarea id="extracurricular" name="extracurricular" rows="3" placeholder="Sports, arts, music, etc."></textarea>
+                    <textarea id="extracurricular" name="extracurricular" rows="3"
+                        placeholder="Sports, arts, music, etc."></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="medicalConditions">Medical Conditions or Allergies</label>
-                    <textarea id="medicalConditions" name="medicalConditions" rows="3" placeholder="Please list any medical conditions or allergies"></textarea>
+                    <textarea id="medicalConditions" name="medicalConditions" rows="3"
+                        placeholder="Please list any medical conditions or allergies"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -293,8 +300,10 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="button" class="btn btn-prev" data-prev="2"><i class="fas fa-arrow-left"></i> Previous</button>
-                    <button type="button" class="btn btn-next" data-next="4">Next <i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="btn btn-prev" data-prev="2"><i class="fas fa-arrow-left"></i>
+                        Previous</button>
+                    <button type="button" class="btn btn-next" data-next="4">Next <i
+                            class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
 
@@ -332,17 +341,20 @@
 
                 <div class="form-group">
                     <label for="reasons">Reasons for choosing our school</label>
-                    <textarea id="reasons" name="reasons" rows="3" placeholder="Please share why you chose Aura International Christian School"></textarea>
+                    <textarea id="reasons" name="reasons" rows="3"
+                        placeholder="Please share why you chose Aura International Christian School"></textarea>
                 </div>
 
                 <div class="form-group terms-group">
                     <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I certify that the information provided is accurate and complete. I understand that falsification may result in revocation of admission.*</label>
+                    <label for="terms">I certify that the information provided is accurate and complete. I understand
+                        that falsification may result in revocation of admission.*</label>
                     <div class="error-message" id="termsError"></div>
                 </div>
 
                 <div class="form-actions">
-                    <button type="button" class="btn btn-prev" data-prev="3"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button type="button" class="btn btn-prev" data-prev="3"><i class="fas fa-arrow-left"></i>
+                        Previous</button>
                     <button type="submit" class="btn btn-submit">
                         <span class="submit-text">Submit Application</span>
                         <span class="loading-spinner"></span>
@@ -350,15 +362,8 @@
                 </div>
             </div>
 
-            <!-- Success Message (hidden by default) -->
-            <div class="form-success" style="display: none;">
-                <div class="success-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h2>Application Submitted Successfully!</h2>
-                <p>Thank you for applying to Aura International Christian School. We've received your application and will contact you within 3-5 business days.</p>
-                <p>A confirmation email has been sent to your provided email address.</p>
-                <a href="../index.html" class="btn btn-primary">Return to Homepage</a>
+            <!-- Redirect after submit -->
+            <input type="hidden" name="redirect" value="https://auraics.vercel.app/pages/thank-you.html">
             </div>
         </form>
     </main>
@@ -387,8 +392,10 @@
             <div class="footer-column">
                 <h3>Connect With Us</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61575927843812"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/aura-international-christian-school/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61575927843812"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/aura-international-christian-school/"><i
+                            class="fab fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/aicsint/"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
@@ -407,4 +414,5 @@
     <script src="../script.js"></script>
     <script src="../form.js"></script>
 </body>
+
 </html>
