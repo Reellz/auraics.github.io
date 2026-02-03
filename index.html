@@ -7,7 +7,11 @@
     <link rel="shortcut icon" href="./images/logo.png" type="logo-icon">
     <title>Aura International Christian School</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind CSS & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
@@ -22,8 +26,8 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="./pages/about.html">About Us</a></li>
+                    <li><a href="index.html">Welcome</a></li>
+                    <li><a href="./pages/about.html">About AICS</a></li>
                     <li><a href="./pages/events.html">Academics</a></li>
                     <li><a href="./pages/admissions.html">Admissions</a></li>
                     <li><a href="./pages/contact.html">Contact</a></li>
@@ -35,32 +39,96 @@
         </div>
     </header>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = [
+                "#slide1",
+                "#slide2",
+                "#slide3",
+            ];
+
+            const heroText = document.getElementById("heroText");
+            let currentSlide = 0;
+
+            if (!heroText) return; // safety guard
+
+            function animateHeroText() {
+                heroText.classList.remove("animate-in");
+                heroText.classList.add("animate-out");
+
+                setTimeout(() => {
+                    heroText.classList.remove("animate-out");
+                    heroText.classList.add("animate-in");
+                }, 400);
+            }
+
+            // initial animation
+            heroText.classList.add("animate-in");
+
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+
+                document.querySelector(slides[currentSlide]).scrollIntoView({
+                    behavior: "smooth",
+                    inline: "start",
+                });
+
+                animateHeroText();
+            }, 5000);
+        });
+    </script>
+
+
     <main>
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h2>Nurturing Godly-Global Citizens</h2>
-                <p>Where Academic Excellence Meets Unwavering Faith for a Purposeful Future</p>
-                <div class="hero-buttons">
-                    <a href="./pages/admissions.html" class="btn btn-primary">Apply Now</a>
-                    <a href="./pages/about.html" class="btn btn-secondary">Learn More</a>
+            <div class="hero max-h-[700px] w-full bg-[#f5f5f5]">
+                <div class="hero-content flex-col-reverse lg:flex-row-reverse gap-10">
+
+                    <!-- Carousel -->
+                    <div class="carousel w-130" id="heroCarousel">
+                        <div class="carousel-item w-full" id="slide1">
+                            <img src="./images/student-in-class.png" class="w-full object-cover" />
+                        </div>
+                        <div class="carousel-item w-full" id="slide2">
+                            <img src="./images/hero-img.png"
+                                class="w-full object-cover" />
+                        </div>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="max-w-xl text-center lg:text-left hero-text" id="heroText">
+                        <h1 class="text-6xl font-extrabold leading-tight">
+                            God-centered minds. Global vision.
+                        </h1>
+                        <p class="py-6 text-base-content/100">
+                            Equipping children to live, lead, and serve excellently.
+                        </p>
+                        <button class="btn btn-primary btn-wide">
+                            <link href="" class="text-white">Get Started</link>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
+
         <section id="about" class="about-section">
             <div class="section-container">
-                <h2 class="section-title">About Our School</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Aura International Christian School is a premier educational institution committed to
-                            academic excellence and spiritual growth. Founded on Christian principles, we provide a
-                            nurturing environment where students can thrive intellectually, socially, and spiritually.
-                        </p>
-                        <p>Our dedicated staff are committed to helping each student reach their full
-                            potential while developing strong moral character and a lifelong love for learning.</p>
+                <h2 class="section-title">Why Aura?</h2>
+                <div class="about-content text-[#cea622e5] gap-[30px] text-center">
+                    <div class="about-image">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="about-text text-5xl  leading-tight animate-bounce ">
+                        <h1>We value <strong class="text-[#ffc4009c]"><br><i>holistic</i> <br></strong>education.</h1>
+                    </div>
+                </div>
+                <div class="about-content text-[#cea622e5] gap-[30px] text-center ">
+                    <div class="about-text text-5xl  leading-tight animate-bounce">
+                        <h1>We train<strong class="text-[#ffc4009c]"> <br><i>lifelong</i><br></strong> learners.</h1>
                     </div>
                     <div class="about-image">
-                        <img src="https://via.placeholder.com/400x300" alt="School Building">
+                        <img src="./images/students-chess.png" alt="image">
                     </div>
                 </div>
             </div>
@@ -74,11 +142,20 @@
                         <div class="program-icon">
                             <i class="fas fa-child"></i>
                         </div>
-                        <h3>Pre-School</h3>
-                        <p>Our preschool program <strong>(<a href="https://aceyoureducation.co.za/"
+                        <h3>Daycare</h3>
+                        <p>Our daycare program <strong>(<a href="https://aceyoureducation.co.za/"
                                     target="_blank">A.C.E.</a>/ECD)</strong> nurtures young minds through play-based
                             learning and foundational
                             Christian values.</p>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3>Pre-School</h3>
+                        <p>Our preschool program <strong>(<a href="https://aceyoureducation.co.za/"
+                                    target="_blank">A.C.E.</a>/ECD)</strong> nurtures young minds through play-based
+                            learning and foundational Christian values.</p>
                     </div>
                     <div class="program-card">
                         <div class="program-icon">
@@ -105,9 +182,10 @@
             </div>
         </section>
 
+        <!-- Upcoming events -->
         <section class="values-section">
             <div class="section-container">
-                <h2 class="section-title">Our Core Values</h2>
+                <h2 class="section-title">Upcoming Events.</h2>
                 <div class="values-grid">
                     <div class="value-card">
                         <h3>Godliness</h3>
@@ -129,64 +207,22 @@
             </div>
         </section>
 
-        <section id="admissions" class="admissions-section">
-            <div class="section-container">
-                <h2 class="section-title">Expression of Interest</h2>
-                <div class="admissions-content">
-                    <div class="admissions-form">
-                        <h3>Request Information</h3>
-                        <form action="https://api.web3forms.com/submit" method="post">
-                            <input type="hidden" name="access_key" value="56eb5523-71c2-4b5f-ad18-0bd1f35e193a">
 
-                            <div class="form-group">
-                                <input type="text" name="parent_name" placeholder="Parent Name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Phone Number" required>
-                            </div>
-
-                            <div class="form-group">
-                                <select name="interest_level" required>
-                                    <option value="">Interest Level</option>
-                                    <option value="pre-school">Pre-school</option>
-                                    <option value="elementary">Elementary</option>
-                                    <option value="high-school">High School</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                            </div>
-
-                            <!-- Bot check -->
-                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                            <!-- Submit -->
-                            <button type="submit" class="btn btn-primary">Submit Request</button>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- Contact & Admissions Section -->
         <section id="contact" class="contact-section">
             <div class="section-container">
-                <h2 class="section-title">Contact Us</h2>
+                <h2 class="section-title">Contact Us.</h2>
+
                 <div class="contact-content">
+                    <!-- Left Side: Contact Details -->
                     <div class="contact-info">
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Najjera-Bulabira, Kira</p>
+                            <p>Najjera, Kira</p>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
-                            <p><a href="tel:+256782120207">+256-782-120207</a></p>
+                            <p><a href="tel:+256776510346">+256-776-510346</a></p>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
@@ -194,9 +230,16 @@
                         </div>
                         <div class="info-item">
                             <i class="fas fa-clock"></i>
-                            <p>Monday-Friday: 7:30 AM - 4:00 PM</p>
+                            <p>Monday-Friday: 6:30 a.m. - 5:00 p.m.</p>
                         </div>
+
+                        <!-- Trigger Button for the Modal -->
+                        <button id="openModalBtn" class="btn btn-primary" style="margin-top: 20px;">
+                            Send us a message
+                        </button>
                     </div>
+
+                    <!-- Right Side: Map -->
                     <div class="contact-map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7268597737107!2d32.61954347599009!3d0.38795276391029987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db1005e6c46c5%3A0x9726f02f65d4e8b9!2sAura%20International%20C.S!5e0!3m2!1sen!2sug!4v1752495357399!5m2!1sen!2sug"
@@ -205,6 +248,49 @@
                 </div>
             </div>
         </section>
+
+        <!-- The Hidden Modal -->
+        <div id="formModal" class="modal-overlay">
+            <div class="modal-content-wrapper">
+                <span class="close-btn" id="closeModalBtn">&times;</span>
+
+                <div class="admissions-form">
+                    <h3>Request Information</h3>
+                    <form id="interestForm">
+                        <input type="hidden" name="access_key" value="56eb5523-71c2-4b5f-ad18-0bd1f35e193a">
+
+                        <div class="form-group">
+                            <input type="text" name="parent_name" placeholder="Parent Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="interest_level" required>
+                                <option value="">Interest Level</option>
+                                <option value="daycare">Daycare</option>
+                                <option value="pre-school">Pre-school</option>
+                                <option value="elementary">Elementary</option>
+                                <option value="high-school">High School</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+
+                        <input type="checkbox" name="botcheck" style="display: none;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                    </form>
+                    <div id="formResponse"
+                        style="margin-top: 15px; text-align: center; color: var(--primary-green); font-weight: bold;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="main-footer">
@@ -222,10 +308,9 @@
             <div class="footer-column">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="#">School Calendar</a></li>
+                    <li><a href="./pages/events.html">School Calendar</a></li>
                     <li><a href="#">Parent Portal</a></li>
-                    <li><a href="#">Lunch Menu</a></li>
-                    <li><a href="#">Uniform Policy</a></li>
+                    <li><a href="#">Our Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -236,7 +321,7 @@
                     <a href="https://www.linkedin.com/company/aura-international-christian-school/"><i
                             class="fab fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/aicsint/"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/+256776510346"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 <p>Subscribe to our newsletter</p>
                 <form class="newsletter-form">
@@ -251,6 +336,7 @@
     </footer>
 
     <script src="script.js"></script>
+
 
 </body>
 

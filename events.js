@@ -178,3 +178,7 @@ lightboxStyles.textContent = `
     }
 `;
 document.head.appendChild(lightboxStyles);
+// Current year for footer
+document.querySelector('.footer-bottom').innerHTML = `
+    <p>Copyright &copy; ${new Date().getFullYear()} | Aura International Christian School. All rights reserved.</p>
+`;

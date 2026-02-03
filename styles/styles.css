@@ -11,6 +11,8 @@
     --medium-gray: #e0e0e0;
     --dark-gray: #333333;
     --text-color: #444444; /* Softer than pure black */
+    --color: #cea622e5;
+    --color: #fc900294;
 }
 
 * {
@@ -102,7 +104,7 @@ img {
 
 /* Header Styles */
 .main-header {
-    background-color: var(--white);
+    background-color: var(--light-gray);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
@@ -181,35 +183,39 @@ img {
     color: var(--primary-green);
 }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(rgba(42, 127, 98, 0.85), rgba(42, 127, 98, 0.9)), 
-                url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
-    color: var(--white);
-    padding: 120px 0;
-    text-align: center;
+/* Hero Section*/
+/* Base state */
+.hero-text > * {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.hero-content h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+/* Animate OUT */
+.hero-text.animate-out > * {
+  animation: heroOut 0.4s ease-in forwards;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+/* Animate IN */
+.hero-text.animate-in > * {
+  animation: heroIn 0.8s ease-out forwards;
 }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+@keyframes heroOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* About Section */
@@ -261,7 +267,7 @@ img {
 
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
@@ -333,93 +339,7 @@ img {
     font-weight: 600;
 }
 
-/* Admissions Section */
-.admissions-section {
-    padding: 80px 0;
-    background-color: var(--light-gray);
-}
-
-.admissions-content {
-    display: flex;
-    gap: 40px;
-}
-
-.admissions-steps {
-    flex: 1;
-}
-
-.step {
-    display: flex;
-    margin-bottom: 30px;
-    align-items: flex-start;
-}
-
-.step-number {
-    background-color: var(--primary-green);
-    color: var(--white);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    margin-right: 15px;
-    flex-shrink: 0;
-    font-weight: 700;
-}
-
-.step-content h3 {
-    color: var(--primary-green);
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.admissions-form {
-    flex: 1;
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--medium-gray);
-}
-
-.admissions-form h3 {
-    color: var(--primary-green);
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--medium-gray);
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: all 0.3s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(42, 127, 98, 0.1);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-/* Contact Section */
+/* Container Layout */
 .contact-section {
     padding: 80px 0;
     background-color: var(--white);
@@ -428,9 +348,10 @@ img {
 .contact-content {
     display: flex;
     gap: 40px;
+    align-items: flex-start;
 }
 
-.contact-info {
+.contact-info, .contact-map {
     flex: 1;
 }
 
@@ -448,12 +369,89 @@ img {
     text-align: center;
 }
 
-.contact-map {
-    flex: 1;
+/* Modal Core Styles */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 10000; /* Higher than everything else */
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    align-items: center; 
+    justify-content: center;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    background: var(--white);
+    padding: 20px;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px; top: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary-green);
+}
+
+/* Responsive Adjustments */
+
+/* Tablet and Smaller Desktops */
+@media (max-width: 1536px) {
+    .modal-content-wrapper {
+        max-width: 90%; /* Prevent hitting screen edges */
+        margin: 0 20px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .modal-content-wrapper {
+        width: 95%;
+        padding: 15px;
+        max-height: 90vh; /* Keep content within viewport */
+        overflow-y: auto; /* Enable scrolling for long content */
+    }
+
+    .close-btn {
+        font-size: 1.5rem;
+        top: 5px;
+        right: 10px;
+    }
+}
+
+/* Animation */
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Form Styles inside Modal */
+.admissions-form h3 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group { margin-bottom: 15px; }
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
     border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* Footer Styles */
