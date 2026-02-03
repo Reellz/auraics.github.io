@@ -314,3 +314,60 @@
     }
 }
 
+
+/* /* Timeline Styles */
+.timeline-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    position: relative;
+}
+
+.timeline-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.timeline-year {
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Team Styles */
+.team-img-wrapper img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--gold);
+}
+
+.fun-fact {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--primary-green);
+    margin-top: 10px;
+}
+
+/* CTA Section */
+.about-cta {
+    padding: 80px 0;
+    background-color: var(--primary-green);
+    color: white;
+    text-align: center;
+}
+
+.about-cta h2 { margin-bottom: 20px; }
+
+/* Responsive for Timeline */
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

@@ -27,3 +27,27 @@ fetch('https://webforms3.com/api/submit', {
     submitButton.querySelector('.submit-text').style.display = 'block';
     submitButton.querySelector('.loading-spinner').style.display = 'none';
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const countdownElement = document.getElementById('countdown');
+    const redirectUrl = 'index.html'; 
+    let secondsRemaining = 10;
+
+    if (!countdownElement) {
+        console.error("Countdown element with ID 'countdown' not found.");
+        return;
+    }
+
+
+    countdownElement.textContent = secondsRemaining;
+
+    const timer = setInterval(() => {
+        secondsRemaining--;
+        
+        countdownElement.textContent = secondsRemaining;
+        if (secondsRemaining <= 0) {
+            clearInterval(timer);
+            window.location.href = redirectUrl;
+        }
+    }, 1000); 
+});
