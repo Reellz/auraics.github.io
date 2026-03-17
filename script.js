@@ -106,8 +106,8 @@ if (newsletterForm) {
 
 // Current year for footer
 document.querySelector(".footer-bottom").innerHTML = `
-    <p>Copyright &copy; ${new Date().getFullYear()} | Aura International Christian School. All rights reserved.</p>
-`;
+     <p>Copyright &copy; ${new Date().getFullYear()} | Aura International Christian School. All rights reserved.</p>
+ `;
 
 // Back to top button
 const backToTopButton = document.createElement("button");
@@ -193,7 +193,7 @@ window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; }
 
 // 2. AJAX Submission (Prevents Redirect)
 form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop page refresh
+    e.preventDefault();
     responseMsg.innerHTML = "Sending...";
 
     const formData = new FormData(form);
@@ -209,7 +209,7 @@ form.addEventListener('submit', function(e) {
         if (response.status == 200) {
             responseMsg.innerHTML = "Success! We will contact you soon.";
             form.reset();
-            setTimeout(() => { modal.style.display = 'none'; }, 2000); // Close after 2s
+            setTimeout(() => { modal.style.display = 'none'; }, 2000);
         } else {
             responseMsg.innerHTML = "Something went wrong. Please try again.";
         }
