@@ -41,16 +41,13 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const slides = [
-                "#slide1",
-                "#slide2",
-                "#slide3",
-            ];
-
+            const slides = document.querySelectorAll(".hero-slide");
             const heroText = document.getElementById("heroText");
-            let currentSlide = 0;
 
-            if (!heroText) return; // safety guard
+            if (!slides.length || !heroText) return;
+
+            let currentSlide = 0;
+            let intervalId = null;
 
             function animateHeroText() {
                 heroText.classList.remove("animate-in");
@@ -62,20 +59,44 @@
                 }, 400);
             }
 
-            // initial animation
-            heroText.classList.add("animate-in");
-
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % slides.length;
-
-                document.querySelector(slides[currentSlide]).scrollIntoView({
-                    behavior: "smooth",
-                    inline: "start",
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle("active", i === index);
                 });
 
                 animateHeroText();
-            }, 5000);
+            }
+
+            // Initial state
+            heroText.classList.add("animate-in");
+            showSlide(currentSlide);
+
+            function startSlider() {
+                intervalId = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }, 5000);
+            }
+
+            function stopSlider() {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+            }
+
+            // Kill slider the moment the user scrolls
+            window.addEventListener(
+                "scroll",
+                () => {
+                    stopSlider();
+                },
+                { once: true }
+            );
+
+            startSlider();
         });
+
     </script>
 
 
@@ -90,8 +111,7 @@
                             <img src="./images/student-in-class.png" class="w-full object-cover" />
                         </div>
                         <div class="carousel-item w-full" id="slide2">
-                            <img src="./images/hero-img.png"
-                                class="w-full object-cover" />
+                            <img src="./images/hero-img.png" class="w-full object-cover" />
                         </div>
                     </div>
 
@@ -188,20 +208,12 @@
                 <h2 class="section-title">Upcoming Events.</h2>
                 <div class="values-grid">
                     <div class="value-card">
-                        <h3>Godliness</h3>
-                        <p>We nurture hearts to honor God in thought, word, and deed, and to radiate His Glory.</p>
+                        <h3>Term I opening</h3>
+                        <p>Date: 10th February, 2026</p>
                     </div>
                     <div class="value-card">
-                        <h3>Integrity</h3>
-                        <p>We cultivate honesty, responsibility, and strong moral character.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Diligence</h3>
-                        <p></p>We instill the culture of consistency, working hard and finishing strong.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Humility</h3>
-                        <p>We cultivate a heart of service following Christ's example.</p>
+                        <h3>PTM</h3>
+                        <p>Date: To be communicated...</p>
                     </div>
                 </div>
             </div>
