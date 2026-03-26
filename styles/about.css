@@ -103,123 +103,19 @@
     margin-bottom: 15px;
 }
 
-/* Problem/Solution Section */
-.problem-solution-section {
+/* Story Section */
+.story-section {
     padding: 80px 0;
     background-color: var(--white);
 }
 
-.problem-solution-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-}
-
-.problem-card, .solution-card {
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.problem-card {
-    background-color: var(--light-green);
-    border-left: 4px solid #e74c3c;
-}
-
-.solution-card {
-    background-color: var(--light-gold);
-    border-left: 4px solid var(--primary-green);
-}
-
-.problem-card h2, .solution-card h2 {
-    color: var(--primary-green);
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-/* Objectives Section */
-.objectives-section {
-    padding: 80px 0;
-    background-color: var(--light-gray);
-}
-
-.objectives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.objective-card {
-    background-color: var(--white);
-    padding: 25px 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s;
-}
-
-.objective-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.objective-card i {
-    font-size: 1.8rem;
-    color: var(--gold);
-    margin-bottom: 15px;
-}
-
-.objective-card h3 {
-    color: var(--primary-green);
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-/* Services Section */
-.services-section {
-    padding: 80px 0;
-    background-color: var(--white);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.service-card {
-    background-color: var(--off-white);
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-.service-icon {
-    width: 70px;
-    height: 70px;
-    background-color: var(--light-gold);
-    border-radius: 50%;
+.story-grid {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
+    flex-direction: column;
+    text-align: center;
 }
 
-.service-icon i {
-    font-size: 1.8rem;
-    color: var(--primary-green);
-}
 
-.service-card h3 {
-    color: var(--primary-green);
-    margin-bottom: 15px;
-}
 
 /* Curriculum Section */
 .curriculum-section {
@@ -282,8 +178,7 @@
 }
 
 @media (max-width: 768px) {
-    .mission-vision-grid,
-    .problem-solution-grid {
+    .mission-vision-grid {
         grid-template-columns: 1fr;
     }
     
@@ -307,10 +202,6 @@
     
     .section-title {
         font-size: 1.6rem;
-    }
-    
-    .objectives-grid {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -355,15 +246,6 @@
     
 }
 
-.fun-fact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--primary-green);
-    margin-top: 10px;
-}
 
 /* CTA Section */
 .about-cta {
@@ -383,8 +265,3 @@
     }
 }
 
-/* @media (min-width: 1024px) {
-    .team-img-wrapper img {
-        margin-left: 190px;
-    }
-} */
