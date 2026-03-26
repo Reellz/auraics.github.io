@@ -220,44 +220,89 @@ img {
 
 /* About Section */
 .about-section {
-    padding: 80px 0;
-    background-color: var(--white);
-}
-
-.about-content {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    flex-direction: column;
 }
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.about-image {
-    flex: 1;
+.cards {
+    width: 940px;
+    display: flex;
+    flex-direction: row;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s;
 }
 
-.about-image img {
-    transition: transform 0.5s;
-    width: 100%;
-    height: auto;
-    display: block;
+.cardItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px;
 }
 
-.about-image:hover img {
-    transform: scale(1.03);
+.cardItem h2{
+    font-family: Lexend, sans-serif;
+    color: hsl(0, 0%, 95%);
+    font-weight: 870;
 }
+
+.cardItem p {
+    font-weight: 500;
+    color: hsl(0, 0%, 100%, 0.75 );
+    font-size: 1.1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.cardItem button {
+    background-color: hsl(0, 0%, 95%);
+    border: none;
+    outline: none; 
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+.cardItem button:hover {
+    background-color: transparent;
+    border: 2px solid hsl(0, 0%, 95%);
+    color: hsl(0, 0%, 95%);
+    cursor: pointer ;
+    padding: 13px 28px;
+}
+
+.first {
+    background-color: hsl(31, 77%, 52%, 0.89);
+}
+
+.first button {
+    color: hsl(31, 77%, 52%);
+}
+
+.second {
+    background-color: hsl(184, 100%, 22%);
+}
+
+.second button {
+    color: hsl(184, 100%, 22%);
+}
+
+.third {
+    background-color: hsl(179, 100%, 13%);
+}
+
+.third button {
+    color: hsl(179, 100%, 13%);
+}
+
+@media screen and (max-width: 768px) {
+    .cards {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+
 
 /* Academics Section */
 .academics-section {
@@ -555,16 +600,6 @@ img {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .about-content,
-    .admissions-content,
-    .contact-content {
-        flex-direction: column;
-    }
-    
-    .about-image {
-        order: -1;
-    }
-    
     .hero-content h2 {
         font-size: 2.2rem;
     }
@@ -633,7 +668,7 @@ img {
     }
     
     .header-container {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
     
