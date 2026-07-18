@@ -35,9 +35,6 @@ window.addEventListener('scroll', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
     // Animate benefit cards on scroll
     const benefitCards = document.querySelectorAll('.benefit-card');
     const observerOptions = {
@@ -97,28 +94,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Newsletter form validation
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
+    document.querySelectorAll('.newsletter-form').forEach((newsletterForm) => {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const emailInput = this.querySelector('input[type="email"]');
-            
-            if (emailInput.value && emailInput.value.includes('@')) {
-                // Success state
-                this.innerHTML = `
-                    <p style="color: var(--primary-green); font-weight: 500;">
-                        <i class="fas fa-check-circle"></i> Thank you for subscribing!
-                    </p>
-                `;
-            } else {
-                // Error state
+            const submitBtn = this.querySelector('button[type="submit"]');
+
+            if (!(emailInput.value && emailInput.value.includes('@'))) {
                 emailInput.style.borderColor = '#e74c3c';
                 setTimeout(() => {
                     emailInput.style.borderColor = 'var(--medium-gray)';
                 }, 2000);
+                return;
             }
+
+            if (submitBtn) submitBtn.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    access_key: '56eb5523-71c2-4b5f-ad18-0bd1f35e193a',
+                    subject: 'New Newsletter Signup - AICS Website',
+                    from_name: 'AICS Website Newsletter',
+                    email: emailInput.value,
+                    message: `New newsletter subscriber: ${emailInput.value}`,
+                }),
+            })
+                .then(async (response) => {
+                    if (response.status === 200) {
+                        newsletterForm.innerHTML = `
+                            <p style="color: var(--primary-green); font-weight: 500;">
+                                <i class="fas fa-check-circle"></i> Thank you for subscribing!
+                            </p>
+                        `;
+                    } else if (submitBtn) {
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(() => {
+                    if (submitBtn) submitBtn.disabled = false;
+                });
         });
-    }
+    });
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

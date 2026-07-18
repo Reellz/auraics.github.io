@@ -34,9 +34,6 @@ window.addEventListener('scroll', function() {
     }
 });
 document.addEventListener('DOMContentLoaded', function() {
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
     // Form validation
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -98,33 +95,106 @@ document.addEventListener('DOMContentLoaded', function() {
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
                 const submitText = submitBtn.querySelector('.submit-text');
                 const loadingSpinner = submitBtn.querySelector('.loading-spinner');
-                
+
                 submitText.style.opacity = '0';
                 loadingSpinner.style.display = 'block';
-                
-                // Simulate form submission (replace with actual AJAX call)
-                setTimeout(() => {
-                    // Hide loading state
-                    loadingSpinner.style.display = 'none';
-                    
-                    // Show success message
-                    const successHTML = `
-                        <div class="form-submitted">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Thank You!</h3>
-                            <p>Your message has been sent successfully. We'll get back to you soon.</p>
-                        </div>
-                    `;
-                    
-                    contactForm.insertAdjacentHTML('afterend', successHTML);
-                    contactForm.reset();
-                    
-                    // Scroll to success message
-                    document.querySelector('.form-submitted').scrollIntoView({
-                        behavior: 'smooth'
+                submitBtn.disabled = true;
+
+                const payload = {
+                    access_key: '56eb5523-71c2-4b5f-ad18-0bd1f35e193a',
+                    subject: 'New Contact Form Submission - AICS Website',
+                    from_name: name.value,
+                    name: name.value,
+                    email: email.value,
+                    phone: document.getElementById('phone') ? document.getElementById('phone').value : '',
+                    inquiry_subject: subject.value,
+                    message: message.value,
+                };
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload),
+                })
+                    .then(async (response) => {
+                        loadingSpinner.style.display = 'none';
+                        submitText.style.opacity = '1';
+                        submitBtn.disabled = false;
+
+                        if (response.status === 200) {
+                            const successHTML = `
+                                <div class="form-submitted">
+                                    <i class="fas fa-check-circle"></i>
+                                    <h3>Thank You!</h3>
+                                    <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                                </div>
+                            `;
+
+                            contactForm.insertAdjacentHTML('afterend', successHTML);
+                            contactForm.reset();
+
+                            document.querySelector('.form-submitted').scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            document.getElementById('messageError').textContent = 'Something went wrong. Please try again.';
+                            document.getElementById('messageError').style.display = 'block';
+                        }
+                    })
+                    .catch(() => {
+                        loadingSpinner.style.display = 'none';
+                        submitText.style.opacity = '1';
+                        submitBtn.disabled = false;
+                        document.getElementById('messageError').textContent = 'Could not connect to server. Please try again.';
+                        document.getElementById('messageError').style.display = 'block';
                     });
-                }, 1500);
             }
+        });
+    }
+
+    // Newsletter form validation (footer)
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            const submitBtn = this.querySelector('button[type="submit"]');
+
+            if (!(emailInput.value && emailInput.value.includes('@'))) {
+                emailInput.style.borderColor = '#e74c3c';
+                setTimeout(() => {
+                    emailInput.style.borderColor = 'var(--medium-gray)';
+                }, 2000);
+                return;
+            }
+
+            if (submitBtn) submitBtn.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    access_key: '56eb5523-71c2-4b5f-ad18-0bd1f35e193a',
+                    subject: 'New Newsletter Signup - AICS Website',
+                    from_name: 'AICS Website Newsletter',
+                    email: emailInput.value,
+                    message: `New newsletter subscriber: ${emailInput.value}`,
+                }),
+            })
+                .then(async (response) => {
+                    if (response.status === 200) {
+                        newsletterForm.innerHTML = `
+                            <p style="color: var(--primary-green); font-weight: 500;">
+                                <i class="fas fa-check-circle"></i> Thank you for subscribing!
+                            </p>
+                        `;
+                    } else if (submitBtn) {
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(() => {
+                    if (submitBtn) submitBtn.disabled = false;
+                });
         });
     }
 

@@ -36,9 +36,6 @@ window.addEventListener('scroll', function() {
 
 // Initialize event page specific JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
     // Animate term cards on scroll
     const termCards = document.querySelectorAll('.term-card');
     const observerOptions = {
@@ -65,26 +62,80 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Newsletter form validation
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
+    document.querySelectorAll('.newsletter-form').forEach((newsletterForm) => {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const emailInput = this.querySelector('input[type="email"]');
-            
-            if (emailInput.value && emailInput.value.includes('@')) {
-                // Success state
-                this.innerHTML = `
-                    <p style="color: var(--primary-green); font-weight: 500;">
-                        <i class="fas fa-check-circle"></i> Thank you for subscribing!
-                    </p>
-                `;
-            } else {
-                // Error state
+            const submitBtn = this.querySelector('button[type="submit"]');
+
+            if (!(emailInput.value && emailInput.value.includes('@'))) {
                 emailInput.style.borderColor = '#e74c3c';
                 setTimeout(() => {
                     emailInput.style.borderColor = 'var(--medium-gray)';
                 }, 2000);
+                return;
             }
+
+            if (submitBtn) submitBtn.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    access_key: '56eb5523-71c2-4b5f-ad18-0bd1f35e193a',
+                    subject: 'New Newsletter Signup - AICS Website',
+                    from_name: 'AICS Website Newsletter',
+                    email: emailInput.value,
+                    message: `New newsletter subscriber: ${emailInput.value}`,
+                }),
+            })
+                .then(async (response) => {
+                    if (response.status === 200) {
+                        newsletterForm.innerHTML = `
+                            <p style="color: var(--primary-green); font-weight: 500;">
+                                <i class="fas fa-check-circle"></i> Thank you for subscribing!
+                            </p>
+                        `;
+                    } else if (submitBtn) {
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(() => {
+                    if (submitBtn) submitBtn.disabled = false;
+                });
+        });
+    });
+
+    // Dynamic Calendar: Request a Visit Date form (pushes to staff inbox via Web3Forms)
+    const dateRequestForm = document.getElementById('dateRequestForm');
+    const dateRequestResponse = document.getElementById('dateRequestResponse');
+    if (dateRequestForm) {
+        dateRequestForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            dateRequestResponse.textContent = 'Sending request...';
+
+            const formData = new FormData(dateRequestForm);
+            const object = Object.fromEntries(formData);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(object),
+            })
+                .then(async (response) => {
+                    if (response.status === 200) {
+                        dateRequestResponse.textContent = 'Request sent! Our staff will confirm your visit date by email.';
+                        dateRequestResponse.style.color = 'var(--primary-green)';
+                        dateRequestForm.reset();
+                    } else {
+                        dateRequestResponse.textContent = 'Something went wrong. Please try again.';
+                        dateRequestResponse.style.color = '#e74c3c';
+                    }
+                })
+                .catch(() => {
+                    dateRequestResponse.textContent = 'Could not connect to server. Please try again.';
+                    dateRequestResponse.style.color = '#e74c3c';
+                });
         });
     }
 

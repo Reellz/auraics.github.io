@@ -401,3 +401,44 @@
         height: 50px;
     }
 }
+/* Newsletter Signup Section (between Education Ethos and Apply) */
+.newsletter-signup-section {
+    padding: 60px 0;
+    background-color: var(--light-gold);
+    text-align: center;
+}
+
+.newsletter-signup-section p {
+    max-width: 500px;
+    margin: 0 auto 25px;
+    color: var(--dark-gray);
+}
+
+.admissions-newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.admissions-newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 30px;
+    border: 1px solid var(--medium-gray);
+}
+
+.admissions-newsletter-form button {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admissions-newsletter-form button:hover {
+    background-color: var(--secondary-green);
+}

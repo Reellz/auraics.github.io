@@ -1,3 +1,25 @@
+// Show Full Team toggle (About page)
+const showFullTeamBtn = document.getElementById('showFullTeamBtn');
+const fullTeamPanel = document.getElementById('fullTeamPanel');
+if (showFullTeamBtn && fullTeamPanel) {
+  showFullTeamBtn.addEventListener('click', () => {
+    const isExpanded = fullTeamPanel.classList.toggle('expanded');
+    showFullTeamBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    showFullTeamBtn.textContent = isExpanded ? 'Show Fewer' : 'Show Full Team';
+  });
+}
+
+// Interactive "Why Aura" cards (replaces broken dead-end Learn More links)
+document.querySelectorAll(".why-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".why-card");
+    if (!card) return;
+    const isExpanded = card.classList.toggle("expanded");
+    btn.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+    btn.textContent = isExpanded ? "Show Less" : "Learn More";
+  });
+});
+
 // Mobile Menu Toggle
 document
   .querySelector(".mobile-menu-toggle")
@@ -80,29 +102,52 @@ valueCards.forEach((card, index) => {
   observer.observe(card);
 });
 
-// Form validation for newsletter
-const newsletterForm = document.querySelector(".newsletter-form");
-if (newsletterForm) {
+// Newsletter signup - wired to Web3Forms so submissions actually reach the school inbox
+document.querySelectorAll(".newsletter-form").forEach((newsletterForm) => {
   newsletterForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const emailInput = this.querySelector('input[type="email"]');
+    const submitBtn = this.querySelector('button[type="submit"]');
 
-    if (emailInput.value && emailInput.value.includes("@")) {
-      // Success state
-      this.innerHTML = `
-                <p style="color: var(--primary-green); font-weight: 500;">
-                    <i class="fas fa-check-circle"></i> Thank you for subscribing!
-                </p>
-            `;
-    } else {
-      // Error state
+    if (!(emailInput.value && emailInput.value.includes("@"))) {
       emailInput.style.borderColor = "#e74c3c";
       setTimeout(() => {
         emailInput.style.borderColor = "var(--medium-gray)";
       }, 2000);
+      return;
     }
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: '56eb5523-71c2-4b5f-ad18-0bd1f35e193a',
+        subject: 'New Newsletter Signup - AICS Website',
+        from_name: 'AICS Website Newsletter',
+        email: emailInput.value,
+        message: `New newsletter subscriber: ${emailInput.value}`,
+      }),
+    })
+      .then(async (response) => {
+        if (response.status === 200) {
+          newsletterForm.innerHTML = `
+                <p style="color: var(--primary-green); font-weight: 500;">
+                    <i class="fas fa-check-circle"></i> Thank you for subscribing!
+                </p>
+            `;
+        } else {
+          if (submitBtn) submitBtn.disabled = false;
+          emailInput.style.borderColor = "#e74c3c";
+        }
+      })
+      .catch(() => {
+        if (submitBtn) submitBtn.disabled = false;
+        emailInput.style.borderColor = "#e74c3c";
+      });
   });
-}
+});
 
 // Current year for footer
 document.querySelector(".footer-bottom").innerHTML = `
@@ -179,20 +224,23 @@ if (curriculumSection) {
 }
 
 const modal = document.getElementById('formModal');
-const openBtn = document.getElementById('openModalBtn');
+const openBtns = document.querySelectorAll('#openModalBtn, .open-modal-btn');
 const closeBtn = document.getElementById('closeModalBtn');
 const form = document.getElementById('interestForm');
 const responseMsg = document.getElementById('formResponse');
 
-// 1. Open and Close Logic
-openBtn.onclick = () => modal.style.display = 'flex';
-closeBtn.onclick = () => modal.style.display = 'none';
+// 1. Open and Close Logic (supports multiple trigger buttons on one page)
+openBtns.forEach((btn) => {
+  btn.onclick = () => { if (modal) modal.style.display = 'flex'; };
+});
+if (closeBtn) closeBtn.onclick = () => modal.style.display = 'none';
 
 // Close if clicking outside the form
-window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; }
+window.onclick = (e) => { if (modal && e.target == modal) modal.style.display = 'none'; }
 
 // 2. AJAX Submission (Prevents Redirect)
-form.addEventListener('submit', function(e) {
+if (form) {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
     responseMsg.innerHTML = "Sending...";
 
@@ -217,4 +265,5 @@ form.addEventListener('submit', function(e) {
     .catch(error => {
         responseMsg.innerHTML = "Error: Could not connect to server.";
     });
-});
+  });
+}

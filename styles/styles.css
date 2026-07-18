@@ -176,6 +176,14 @@ img {
     width: 100%;
 }
 
+.main-nav a.active {
+    color: var(--primary-green);
+}
+
+.main-nav a.active::after {
+    width: 100%;
+}
+
 .mobile-menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -188,6 +196,31 @@ img {
 .hero-text > * {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hero carousel crossfade */
+#heroCarousel {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+#heroCarousel .carousel-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+#heroCarousel .carousel-item.active {
+    opacity: 1;
+}
+
+#heroCarousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Animate OUT */
@@ -301,6 +334,61 @@ img {
         width: 100%;
         flex-direction: column;
     }
+}
+
+/* Interactive "Why Aura" expanding cards */
+.why-expand {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    animation: whyExpandIn 0.35s ease-out;
+}
+
+.why-card.expanded .why-expand {
+    display: flex;
+}
+
+.why-expand img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.why-expand p {
+    font-size: 0.95rem;
+    flex-grow: 0;
+}
+
+.why-toggle {
+    cursor: pointer;
+}
+
+@keyframes whyExpandIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Homepage "Our Services" teaser */
+.services-teaser-section {
+    padding: 80px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.services-teaser-copy {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    color: var(--text-color);
+}
+
+.services-teaser-section .programs-grid .program-card h3 {
+    margin-bottom: 0;
+}
+
+.services-teaser-cta {
+    margin-top: 40px;
 }
 
 
