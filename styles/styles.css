@@ -276,6 +276,7 @@ img {
     font-family: Lexend, sans-serif;
     color: hsl(0, 0%, 95%);
     font-weight: 870;
+    text-transform: uppercase;
 }
 
 .cardItem p {
