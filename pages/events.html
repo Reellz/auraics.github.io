@@ -29,9 +29,9 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="./admissions.html">Admissions</a></li>
-                    <li><a href="./events.html">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a class="active" href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-toggle">
@@ -178,8 +178,38 @@
                 </div>
                 <div class="events-cta">
                     <p>Want to stay updated on all school events?</p>
-                    <a href="#newsletter" class="btn btn-primary">Subscribe to Our Newsletter</a>
+                    <a href="calendar.html" class="btn btn-primary">Subscribe to Our Calendar</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="request-date-section" id="requestDateSection">
+            <div class="section-container">
+                <h2 class="section-title">Request a Visit Date</h2>
+                <p>Select a preferred date and our staff will confirm your visit by email.</p>
+                <form id="dateRequestForm" class="date-request-form">
+                    <input type="hidden" name="access_key" value="56eb5523-71c2-4b5f-ad18-0bd1f35e193a">
+                    <input type="hidden" name="subject" value="New Visit Date Request - AICS Website">
+                    <div class="date-request-row">
+                        <div class="form-group">
+                            <label for="visitorName">Full Name</label>
+                            <input type="text" id="visitorName" name="visitor_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="visitorEmail">Email Address</label>
+                            <input type="email" id="visitorEmail" name="email" required>
+                        </div>
+                    </div>
+                    <div class="date-request-row">
+                        <div class="form-group">
+                            <label for="visitDate">Preferred Date</label>
+                            <input type="date" id="visitDate" name="preferred_date" required>
+                        </div>
+                    </div>
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <button type="submit" class="btn btn-primary">Request Date</button>
+                </form>
+                <div id="dateRequestResponse" class="date-request-response"></div>
             </div>
         </section>
     </main>
@@ -192,17 +222,18 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="about.html">Academics</a></li>
+                    <li><a href="services.html">Our Services</a></li>
                     <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="events.html">Events</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="./pages/events.html">School Calendar</a></li>
+                    <li><a href="calendar.html">School Calendar</a></li>
                     <li><a href="#">Parent Portal</a></li>
-                    <li><a href="#">Our Gallery</a></li>
+                    <li><a href="gallery.html">Our Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-column">

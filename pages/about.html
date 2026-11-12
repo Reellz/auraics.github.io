@@ -32,10 +32,10 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="./admissions.html">Admissions</a></li>
-                    <li><a href="./events.html">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="active" href="about.html">About Us</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-toggle">
@@ -62,7 +62,7 @@
                         <h2 class="section-title" style="text-align: center;">Who We Are</h2>
                         <p>The Aura Experience is a bold <strong>faith venture</strong> that transcends local
                             boundaries.
-                            Our identity as Glabal Citizens is anchored in the biblical mandate of Matthew 5:16: <b>Let
+                            Our identity as Global Citizens is anchored in the biblical mandate of Matthew 5:16: <b>Let
                                 your light so shine before men,
                                 that they may see our good works and glorify your father in Heaven."</b></p>
                         <p>We believe that when a student is equipped with the innovative problem-solving skills of the
@@ -92,10 +92,18 @@
                         competitive global economy, our dual focus ensures that our graduates are not only technically
                         proficient but also morally unshakeable. Currently, some of our students are able to instruct
                         others in Music, and one of them built this website.</p>
-                    <button id="openModalBtn" class="btn btn-primary" style="margin-top: 20px;">
-                        Our Strategy
-                    </button>
+                    <p class="story-differentiator">Our strategic differentiator is the provision of a homely learning
+                        environment where parents are equipped to help shape a Godly generation. It is also our refusal
+                        to separate spiritual formation from academic rigor.</p>
+                    <div class="team-actions">
+                        <button id="openModalBtn" class="btn btn-primary open-modal-btn">
+                            Our Strategy
+                        </button>
+                        <a href="gallery.html" class="btn btn-primary">View Our Gallery <i class="fa fa-arrow-right"
+                                aria-hidden="true"></i></a>
+                    </div>
                 </div>
+            </div>
         </section>
 
         <!-- TIMELINE -->
@@ -167,7 +175,7 @@
                             <div class="value-card">
                                 <i class="fas fa-hard-hat"></i>
                                 <h3>Diligence</h3>
-                                </p>We instill the culture of consistency, working hard and finishing strong.</p>
+                                <p>We instill the culture of consistency, working hard and finishing strong.</p>
                             </div>
                             <div class="value-card">
                                 <i class="fas fa-hands-helping"></i>
@@ -185,22 +193,53 @@
         <section class="team-section">
             <div class="section-container">
                 <h2 class="section-title">Meet the Team</h2>
-                <div class="values-grid">
-                    <div class="value-card">
+                <p class="team-tier-label">Directors</p>
+                <div class="team-grid">
+                    <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="../images/director.png" alt="Name">
+                            <img src="../images/director.png" alt="Rev. Alex Abraham Bwambale">
                         </div>
                         <h3>Rev. Alex Abraham Bwambale</h3>
                         <p><strong>Director</strong></p>
                     </div>
-                    <div class="value-card">
+                    <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="../images/principal.png" alt="Name">
+                            <img src="../images/principal.png" alt="Mrs. Sarah Bwambale">
                         </div>
                         <h3>Mrs. Sarah Bwambale</h3>
                         <p><strong>Director/Principal</strong></p>
-
                     </div>
+                </div>
+
+                <div id="fullTeamPanel" class="full-team-panel">
+                    <p class="team-tier-label">Staff</p>
+                    <div class="team-grid">
+                        <div class="team-card team-card-placeholder">
+                            <div class="team-img-wrapper team-img-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3>Staff Member</h3>
+                            <p><strong>Title coming soon</strong></p>
+                        </div>
+                    </div>
+
+                    <p class="team-tier-label">Advisory Team</p>
+                    <div class="team-grid">
+                        <div class="team-card team-card-placeholder">
+                            <div class="team-img-wrapper team-img-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3>Auntie Deborah</h3>
+                            <p><strong>Advisory Team</strong> &mdash; full title pending</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-actions">
+                    <button type="button" id="showFullTeamBtn" class="btn btn-primary" aria-expanded="false"
+                        aria-controls="fullTeamPanel">
+                        Show Full Team
+                    </button>
                 </div>
             </div>
         </section>
@@ -210,7 +249,7 @@
             <div class="section-container">
                 <h2>Ready to Join the Aura Family?</h2>
                 <p>Schedule a visit or join our email list to stay updated.</p>
-                <button id="openModalBtn" class="btn btn-primary">Schedule a Visit</button>
+                <a href="events.html#requestDateSection" id="openModalBtn" class="btn btn-primary">Schedule a Visit</a>
             </div>
         </section>
 
@@ -224,17 +263,18 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="about.html">Academics</a></li>
+                    <li><a href="services.html">Our Services</a></li>
                     <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="events.html">Events</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="./pages/events.html">School Calendar</a></li>
+                    <li><a href="calendar.html">School Calendar</a></li>
                     <li><a href="#">Parent Portal</a></li>
-                    <li><a href="#">Our Gallery</a></li>
+                    <li><a href="gallery.html">Our Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-column">

@@ -13,9 +13,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Font -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -45,15 +45,16 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const slides = document.querySelectorAll(".hero-slide");
+            const slides = document.querySelectorAll(".carousel-item");
             const heroText = document.getElementById("heroText");
 
-            if (!slides.length || !heroText) return;
+            if (!slides.length) return;
 
             let currentSlide = 0;
             let intervalId = null;
 
             function animateHeroText() {
+                if (!heroText) return;
                 heroText.classList.remove("animate-in");
                 heroText.classList.add("animate-out");
 
@@ -72,7 +73,7 @@
             }
 
             // Initial state
-            heroText.classList.add("animate-in");
+            if (heroText) heroText.classList.add("animate-in");
             showSlide(currentSlide);
 
             function startSlider() {
@@ -81,21 +82,6 @@
                     showSlide(currentSlide);
                 }, 5000);
             }
-
-            function stopSlider() {
-                if (intervalId) {
-                    clearInterval(intervalId);
-                    intervalId = null;
-                }
-            }
-
-            window.addEventListener(
-                "scroll",
-                () => {
-                    stopSlider();
-                },
-                { once: true }
-            );
 
             startSlider();
         });
@@ -110,7 +96,7 @@
 
                     <!-- Carousel -->
                     <div class="carousel w-130" id="heroCarousel">
-                        <div class="carousel-item w-full" id="slide1">
+                        <div class="carousel-item w-full active" id="slide1">
                             <img src="./images/student-in-class.png" class="w-full object-cover" />
                         </div>
                         <div class="carousel-item w-full" id="slide2">
@@ -123,12 +109,10 @@
                         <h1 class="text-6xl font-extrabold leading-tight">
                             Godly Citizens. Global vision.
                         </h1>
-                        
-                        <button class="btn btn-primary btn-wide text-white">
-                            <a href="./pages/about.html">
+
+                        <a href="./pages/about.html" class="btn btn-primary btn-wide text-white">
                             Explore <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -139,65 +123,68 @@
             <div class="section-container">
                 <h2 class="section-title">Why Aura?</h2>
                 <div class="cards">
-                    <div class="cardItem first">
+                    <div class="cardItem first why-card">
                         <img src="./images/why1.svg" alt="Image representing Holistic Excellence">
-                        <h2>HOLISTIC EXCELLENCE</h2>
+                        <h2>Holistic Excellence</h2>
                         <p>Blending academic rigour with deep spiritual formation.</p>
-                        <button>Learn More</button>
+                        <button type="button" class="why-toggle" aria-expanded="false">Learn More</button>
+                        <div class="why-expand">
+                            <img src="./images/student-in-class.png" alt="Students in a Christ-centered classroom">
+                            <p>At AICS we cultivate holistic excellence through involvement &mdash; every student builds
+                                Godly character through daily devotions, scripture memorization, and service
+                                opportunities.</p>
+                        </div>
                     </div>
-                    <div class="cardItem second">
+                    <div class="cardItem second why-card">
                         <img src="./images/why2.svg" alt="Image representing Nurturing Community">
-                        <h2>NURTURING COMMUNITY</h2>
+                        <h2>Nurturing Community</h2>
                         <p>Fostering a Christ-centered, homely environment in partnership with families.</p>
-                        <button>Learn More</button>
+                        <button type="button" class="why-toggle" aria-expanded="false">Learn More</button>
+                        <div class="why-expand">
+                            <img src="./images/students-chess.png" alt="Students learning together in community">
+                            <p>We provide a homely learning environment where parents are equipped to help shape a
+                                Godly generation, in true partnership rather than at arm's length.</p>
+                        </div>
                     </div>
-                    <div class="cardItem third">
+                    <div class="cardItem third why-card">
                         <img src="./images/why3.svg " alt="Image representing Future-Ready Innovation">
-                        <h2>FUTURE-READY</h2>
+                        <h2>Future-Ready</h2>
                         <p>Cultivating the creative and technical skills for tomorrow.</p>
-                        <button>Learn More</button>
+                        <button type="button" class="why-toggle" aria-expanded="false">Learn More</button>
+                        <div class="why-expand">
+                            <img src="./images/student-hero.png" alt="Student equipped for the future">
+                            <p>From digital literacy to creative problem-solving, students graduate ready to serve
+                                confidently as Godly citizens with a global vision.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="academics" class="academics-section">
+        <section id="services-teaser" class="services-teaser-section">
             <div class="section-container">
                 <h2 class="section-title">Our Services</h2>
                 <div class="programs-grid">
                     <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-child"></i>
-                        </div>
+                        <div class="program-icon"><i class="fas fa-child"></i></div>
                         <h3>Daycare</h3>
-                        <p>Our program nurtures children by integrating play-based
-                            discovery with Christian values to cultivate the mind, heart, and spirit.</p>
                     </div>
                     <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-child"></i>
-                        </div>
-                        <h3>Pre-School</h3>
-                        <p>Where child-centered education that nurtures the mind, heart, and hands is built on the foundation of Christ.</p>
+                        <div class="program-icon"><i class="fas fa-child"></i></div>
+                        <h3>Preschool</h3>
                     </div>
                     <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
+                        <div class="program-icon"><i class="fas fa-book-open"></i></div>
                         <h3>Elementary School</h3>
-                        <p>A comprehensive Christian curriculum that builds strong academic foundations and
-                            character development.
-                        </p>
                     </div>
                     <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>High-School</h3>
-                        <p>College-preparatory program with advanced courses and spiritual guidance for
-                            young adults.
-                        </p>
+                        <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>High School</h3>
                     </div>
+                </div>
+                <div class="services-teaser-cta">
+                    <a href="./pages/services.html" class="btn btn-primary">View Our Services <i
+                            class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
@@ -294,24 +281,27 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="./pages/about.html">About Us</a></li>
-                    <li><a href="./pages/events.html">Academics</a></li>
+                    <li><a href="./pages/services.html">Our Services</a></li>
                     <li><a href="./pages/admissions.html">Admissions</a></li>
+                    <li><a href="./pages/events.html">Events</a></li>
                     <li><a href="./pages/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Resources</h3>
                 <ul>
-                    <li><a href="./pages/events.html">School Calendar</a></li>
+                    <li><a href="./pages/calendar.html">School Calendar</a></li>
                     <li><a href="#">Parent Portal</a></li>
-                    <li><a href="#">Our Gallery</a></li>
+                    <li><a href="./pages/gallery.html">Our Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Connect With Us</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61575927843812"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/aura-international-christian-school/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61575927843812"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/aura-international-christian-school/"><i
+                            class="fab fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/aicsint/"><i class="fab fa-instagram"></i></a>
                     <a href="https://wa.me/+256776510346"><i class="fab fa-whatsapp"></i></a>
                 </div>
